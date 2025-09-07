@@ -22,27 +22,30 @@
 
     <main>
       <section class="container hero">
-        <div>
-          <h1>Clean, modern starter with fully commented CSS.</h1>
-          <p>
-            Use this page as a reference for what each CSS property does in a
-            real layout. Switch themes, hover the cards, and inspect the code.
-          </p>
-          <div class="actions">
-            <button id="cta" class="btn">Primary Action</button>
-            <button
-              class="btn outline"
-              onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
-            >
-              See Features
-            </button>
-          </div>
-          <div class="hero-visual">
-            <!-- <img src="parot.jpg" alt="" /> -->
-            <div class="sparkle"></div>
-          </div>
-        </div>
-      </section>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Clean, modern starter with fully commented CSS.</h1>
+      <p>
+        Use this page as a reference for what each CSS property does in a
+        real layout. Switch themes, hover the cards, and inspect the code.
+      </p>
+      <div class="actions">
+        <button id="cta" class="btn">Primary Action</button>
+        <button
+          class="btn outline"
+          onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
+        >
+          See Features
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="../image.jpg" style="width: 400px; height: 300px; border-radius: 20px;">
+      <div class="sparkle"></div>
+    </div>
+  </div>
+</section>
 
       <section id="features" class="container">
         <div class="grid">
@@ -157,7 +160,7 @@ document.querySelector('.contactForm').addEventListener('submit', (e) => {
     if (problems.length) {
         alert(problems.join('\n'));
     } else {
-        alert('Thanks! Your (demo) form was submitted.');
+        alert('Thanks! Your form was submitted.');
         e.target.reset();
     }
 });

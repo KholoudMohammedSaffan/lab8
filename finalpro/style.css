@@ -238,3 +238,14 @@ form button{
 footer {
     margin-top: 20px;
 }
+
+.hero-content {
+  display: flex;
+  align-items: center; 
+}
+.hero-visual{
+  margin-left: 300px;
+}
+.hero-text {
+  width: 500px;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Final Project</title>
+  </head>
+  <body class="theme-light">
+    <header>
+      <div class="container nav">
+        <a href="#" class="brand"
+          ><span class="brand_logo">L</span><span>Final Project</span></a
+        >
+      </div>
+
+      <div class="actions">
+        <button id="themeBtn" class="btn outline">Toggle Theme</button>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <div>
+          <h1>Clean, modern starter with fully commented CSS.</h1>
+          <p>
+            Use this page as a reference for what each CSS property does in a
+            real layout. Switch themes, hover the cards, and inspect the code.
+          </p>
+          <div class="actions">
+            <button id="cta" class="btn">Primary Action</button>
+            <button
+              class="btn outline"
+              onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
+            >
+              See Features
+            </button>
+          </div>
+          <div class="hero-visual">
+            <!-- <img src="parot.jpg" alt="" /> -->
+            <div class="sparkle"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="container">
+        <div class="grid">
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium ratione vero rerum quos molestiae temporibus, commodi
+              error consequuntur ducimus cum blanditiis nobis magni hic
+              consequatur qui ipsam optio nulla minima.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium ratione vero rerum quos molestiae temporibus, commodi
+              error consequuntur ducimus cum blanditiis nobis magni hic
+              consequatur qui ipsam optio nulla minima.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium ratione vero rerum quos molestiae temporibus, commodi
+              error consequuntur ducimus cum blanditiis nobis magni hic
+              consequatur qui ipsam optio nulla minima.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium ratione vero rerum quos molestiae temporibus, commodi
+              error consequuntur ducimus cum blanditiis nobis magni hic
+              consequatur qui ipsam optio nulla minima.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="container" style="margin-bottom: 20px">
+        <div class="panel">
+          <h2 style="margin-top: 0">Get in Touch</h2>
+          <form action="" class="contactForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                name="name"
+                type="text"
+                id="name"
+                placeholder="Put Your Name Here!"
+                required
+              />
+              <p>Enter 3 or more chars!</p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Put Your email Here!"
+                required
+              />
+              <p>Enter email here</p>
+            </div>
+            <button type="submit" class="btn">submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>&COPY; <span id="year">2025</span> final project</small>
+      </div>
+    </footer>
+
+    <script>
+        const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+document.body.classList.toggle("theme-light");
+
+if (document.body.classList.contains("theme-light")) {
+    themeBtn.textContent = "Dark Mode";
+} else {
+    themeBtn.textContent = "Light Mode";
+}
+});
+
+
+
+document.querySelector('.contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // غيرنا اسم المتغيرات بس علشان ما تتعارضش مع window.name / window.email
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+
+    const problems = [];
+    if (!nameInput.value || nameInput.value.trim().length < 3) {
+        problems.push('Please enter a valid name.');
+    }
+    if (!emailInput.validity.valid) {
+        problems.push('Please enter a valid email address.');
+    }
+
+    if (problems.length) {
+        alert(problems.join('\n'));
+    } else {
+        alert('Thanks! Your (demo) form was submitted.');
+        e.target.reset();
+    }
+});
+
+    </script>
+  </body>
+</html>
